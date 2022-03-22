@@ -1,0 +1,26 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav{
+    background-color: #1C2B35;
+    
+    
+}
+
+.nav{
+    height: 4.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navlinks ul li a{
+    color: white;
+}
+.navlinks ul{
+    display: flex; 
+}
+.navlinks ul li{
+    margin: 0 1rem;
+}
