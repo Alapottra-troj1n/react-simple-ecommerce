@@ -6,5 +6,11 @@
     display: grid;
     grid-template-columns: 4fr 1fr;
     padding-top: 3rem;
-    border: 1px solid red;
+  
+}
+.product-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+   
 }
