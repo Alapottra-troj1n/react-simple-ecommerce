@@ -2,18 +2,25 @@ import React from "react";
 import './Cart.css'
 
 const Cart = ({cartItem}) => {
-  const priceArray = cartItem.map((Item => Item.price))
-  const total = priceArray.reduce((prev, curr) => prev + curr,0);
 
-  const shippingArray = cartItem.map((Item => Item.shipping));
-  const shipping = shippingArray.reduce((prev, curr) => prev + curr,0);
+let total = 0;
+let shipping = 0;
+let quantity = 0;
+
+for(const product of cartItem){
+  quantity = quantity + product.quantity;
+  total = total + product.price * product.quantity;
+  shipping = shipping + product.shipping;
+}
+
+
   const tax = total * 0.1;
   const grandtotal = total + shipping + tax;
 
   return (
     <div className="side-cart">
       <h2>Summary</h2>
-      <p>Selected Items: {cartItem.length}</p>
+      <p>Selected Items: {quantity}</p>
       <p>Total Price: {total}</p>
       <p>Shipping: {shipping}</p>
       <p>Tax: {tax.toFixed(2)}</p>

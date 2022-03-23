@@ -25,9 +25,20 @@ const Shop = () => {
     const [cartItem, setCartItems] = useState([]);
 
 
-    const addToCart = (product) => {
-        setCartItems([...cartItem, product]);
-        addToDb(product.id);
+    const addToCart = (selectedProduct) => {
+        let newCart = [];
+        const exists = cartItem.find(product => product.id === selectedProduct.id);
+        if(!exists) {
+            selectedProduct.quantity = 1;
+            newCart = [...cartItem , selectedProduct];
+        }else{
+            const rest = cartItem.filter(product=> product.id !== selectedProduct.id);
+            exists.quantity = exists.quantity + 1;
+            newCart = [...rest , exists]
+        }
+
+        setCartItems(newCart);
+        addToDb(selectedProduct.id);
     }
 
     useEffect(() => {
