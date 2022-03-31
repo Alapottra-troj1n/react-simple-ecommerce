@@ -3,25 +3,14 @@ import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css'
 import { addToDb, checkDb } from '../../fakedb';
+import useProducts from '../Hooks/useProducts';
 
 const Shop = () => {
-    const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        const loadData = async() => {
+    const [products, setProducts] = useProducts();
 
-            const res = await fetch('products.json');
-            const data = await res.json();
-            setProducts(data);
-            
-        } 
-
-        loadData();
-        
+  
     
-
-    },[])
-
     const [cartItem, setCartItems] = useState([]);
 
 
