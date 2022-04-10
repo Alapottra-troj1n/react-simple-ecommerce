@@ -4,3 +4,16 @@
     justify-content: center;
   
 }
+.checkout-btn{
+    margin-top: 2rem;
+    padding: .7rem 1.5rem;
+    cursor: pointer;
+    border: none;
+    background-color: #DD636E;
+    color: white;
+    border-radius: 7px ;
+}
+.checkout-btn:hover{
+    background-color: #d8424f;
+
+}

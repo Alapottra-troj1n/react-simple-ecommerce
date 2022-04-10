@@ -1,7 +1,7 @@
 import React from "react";
 import './Cart.css'
 
-const Cart = ({cartItem}) => {
+const Cart = ({cartItem, children}) => {
 
 let total = 0;
 let shipping = 0;
@@ -17,6 +17,10 @@ for(const product of cartItem){
   const tax = total * 0.1;
   const grandtotal = total + shipping + tax;
 
+
+
+ 
+
   return (
     <div className="side-cart">
       <h2>Summary</h2>
@@ -24,7 +28,8 @@ for(const product of cartItem){
       <p>Total Price: {total}</p>
       <p>Shipping: {shipping}</p>
       <p>Tax: {tax.toFixed(2)}</p>
-      <h4>Grand Total: {grandtotal}</h4>
+      <h4>Grand Total: {grandtotal} BDT</h4>
+      {children}
     </div>
   );
 };

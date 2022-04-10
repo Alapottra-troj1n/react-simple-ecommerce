@@ -8,6 +8,11 @@ nav{
     
     
 }
+#logo img{
+    width: 10%;
+    cursor: pointer;
+}
+
 
 .nav{
     height: 4.5rem;

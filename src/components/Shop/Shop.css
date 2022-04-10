@@ -17,5 +17,20 @@
 .summary-section{
     background-color: #FFE0B3;
     margin-left: 1.5rem;
+    width: 250px;
     padding: .7rem;
+    border-radius: 7px;
+}
+.review-order-btn{
+    margin-top: 2rem;
+    padding: .7rem 1.5rem;
+    cursor: pointer;
+    border: none;
+    background-color: #DD636E;
+    color: white;
+    border-radius: 7px ;
+}
+.review-order-btn:hover{
+    background-color: #df5460;
+
 }

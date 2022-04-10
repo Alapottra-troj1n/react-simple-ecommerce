@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { SampleContext } from '../../App';
 import { removeFromDb } from '../../fakedb';
 import Cart from '../Cart/Cart';
 import useCart from '../Hooks/useCart';
@@ -11,10 +13,11 @@ const Orders = () => {
     const [cartItem, setCartItem] = useCart(products);
 
     const removeOrderReview = (product) =>{
-        const productRemoved = cartItem.filter(item => item.id === product.id)
         const productsNotRemoved = cartItem.filter(item => item.id !== product.id)
         setProducts(productsNotRemoved);
+        removeFromDb(product.id);
     }
+   
 
     return (
         <div>
@@ -23,10 +26,14 @@ const Orders = () => {
             <div className="cartReviews">
 
             {cartItem.map(item => <ReviewItem removeOrderReview={removeOrderReview} key={item.id} item={item} /> )}
-
+            
             </div>
             <div className="summary-section">
-                <Cart cartItem={cartItem} />
+                <Cart cartItem={cartItem} >
+                    <Link  to='#'>
+                    <button className="checkout-btn" >Proceed Checkout</button>
+                    </Link>
+                </Cart>
             </div>
 
 
