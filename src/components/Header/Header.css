@@ -32,3 +32,15 @@ nav{
 .navlinks ul li a:hover{
     color: #FF9900;
 }
+.log-out-btn{
+   padding: 8px 20px;
+   border: none;
+   background-color: #DF5460;
+   border-radius: 6px;
+   font-weight: 600;
+   color: white;
+   cursor: pointer;
+}
+.log-out-btn:hover{
+    background-color: #c34751;
+}

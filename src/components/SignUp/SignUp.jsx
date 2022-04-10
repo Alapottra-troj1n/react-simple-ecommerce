@@ -32,11 +32,12 @@ const SignUp = () => {
         else{
             setError("")
             createUserWithEmailAndPassword(email.current.value, password.current.value)
-            if(user){
-                    navigate('/')
-            }
+            
             
         }
+        if(user){
+            navigate('/')
+    }
     }
 
     return (
