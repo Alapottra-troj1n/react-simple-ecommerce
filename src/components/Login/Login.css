@@ -27,8 +27,7 @@
 .btn-container input{
     border: none;
     background-color: #FFE0B3;
-    height: 2.5rem;
-    width: 6rem;
+    padding: .5rem 3rem;
     font-weight: 500;
     margin-right: 1rem;
     cursor: pointer;

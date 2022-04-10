@@ -17,6 +17,8 @@ const Orders = () => {
         setProducts(productsNotRemoved);
         removeFromDb(product.id);
     }
+
+    
    
 
     return (
@@ -30,8 +32,8 @@ const Orders = () => {
             </div>
             <div className="summary-section">
                 <Cart cartItem={cartItem} >
-                    <Link  to='/inventory'>
-                    <button className="checkout-btn" >Proceed Checkout</button>
+                    <Link  to='/shipping'>
+                    <button className="checkout-btn" disabled={ cartItem.length === 0 ? "true" : ""} >Proceed Shipping</button>
                     </Link>
                 </Cart>
             </div>

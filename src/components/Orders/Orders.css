@@ -13,6 +13,14 @@
     color: white;
     border-radius: 7px ;
 }
+.checkout-btn:disabled{
+    background-color: #d49398;
+}
+
+.checkout-btn:disabled:hover{
+    background-color: #d49398;
+}
+
 .checkout-btn:hover{
     background-color: #d8424f;
 
