@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <nav>nk>
+        <nav>
         <div className="container nav">
         <div id="logo">
                 <Link to="/"><img src='https://cdn-icons-png.flaticon.com/512/2919/2919940.png' alt="" /></Link>   

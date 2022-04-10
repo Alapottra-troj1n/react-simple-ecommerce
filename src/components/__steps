@@ -4,3 +4,5 @@ STEPS FOR FIREBASE AUTH INTEGRATION -
 2.create a web-app from the firebase project and create a init file in your project with all secret SDK app information
 3.export the SDK app. and create a auth pass the app in the auth and export it also.
 4.go to firebase authentication settings and select the email and password auth from there.
+5.create sign-in and up pages on the project
+5.npm install --save react-firebase-hooks install npm package to handle auth
