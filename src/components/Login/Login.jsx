@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase.init';
 
 const Login = () => {
+    const location = useLocation();
     const email = useRef(null);
     const password = useRef(null);
     const navigate = useNavigate();
@@ -15,6 +16,8 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
 
+      let from = location.state?.from?.pathname || "/";  
+      let loginText = location?.loginFirst;
 
 
       const handleLogin = (e) => {
@@ -23,7 +26,7 @@ const Login = () => {
        
       }
       if(user){
-        navigate('/shop')
+        navigate(from, {replace : true});
     }
 
      
@@ -32,6 +35,7 @@ const Login = () => {
         <div className="login-page">
           
             <form className="form-container" onSubmit={handleLogin}>
+                {from !== '/' && <p className="login-first-text">Please Login First !</p>}
                 <h2>Login</h2>
                 <input type="email" name="" ref={email} placeholder="Email" id="login-email" />
                 <input type="password" name="" ref={password} placeholder="Password" id="login-password" />
