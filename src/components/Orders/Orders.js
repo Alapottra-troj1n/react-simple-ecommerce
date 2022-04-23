@@ -33,7 +33,7 @@ const Orders = () => {
             <div className="summary-section">
                 <Cart cartItem={cartItem} >
                     <Link  to='/shipping'>
-                    <button className="checkout-btn" disabled={ cartItem.length === 0 ? "true" : ""} >Proceed Shipping</button>
+                    <button className="checkout-btn" disabled={ cartItem.length === 0 ? true : ""} >Proceed Shipping</button>
                     </Link>
                 </Cart>
             </div>

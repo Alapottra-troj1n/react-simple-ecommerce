@@ -6,6 +6,7 @@ import {auth} from '../../firebase.init'
 
 
 
+
 const SignUp = () => {
     const [formError, setError] = useState('');
     const email = useRef(null)
@@ -19,6 +20,9 @@ const SignUp = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
 
+
+      //toastify
+     
 
 
     const handleCreateAccount = (e) => {
@@ -52,6 +56,7 @@ const SignUp = () => {
                 <input type="submit" value="Register" />
                 <Link to='/login'>Already a member ? Login</Link>
             </div>
+          
         </form>
     </div>
     );

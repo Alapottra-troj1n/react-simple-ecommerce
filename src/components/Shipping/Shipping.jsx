@@ -14,6 +14,9 @@ const Shipping = () => {
     
     const handleShipping = (e) => {
         e.preventDefault();
+        const shippingDetails = {email : email.current.value, name : name.current.value, address : address.current.value, phoneNumber : phoneNumber.current.value};
+
+        console.log(shippingDetails);
     }
     
 
