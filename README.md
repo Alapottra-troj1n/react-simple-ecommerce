@@ -1,6 +1,6 @@
 
 # Practice Ecommerce 
-##Live Site : https://gleeful-toffee-ff084c.netlify.app/
+##Live Site : https://simple-react-ecommerce-auth.web.app
 
 ##WORK IN PROGRESS
 
