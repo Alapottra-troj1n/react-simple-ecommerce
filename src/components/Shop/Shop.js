@@ -5,9 +5,10 @@ import "./Shop.css";
 import { addToDb, checkDb } from "../../fakedb";
 import useProducts from "../Hooks/useProducts";
 import { Link } from "react-router-dom";
+import useCart from "../Hooks/useCart";
 
 const Shop = () => {
-  const [cartItem, setCartItems] = useState([]);
+  const [cartItem, setCartItems] = useCart();
   const [pageCount, setPageCount] = useState([]);
   const [page, setPage] = useState(1);
   const [productSize, setProductSize] = useState(5);
@@ -55,19 +56,19 @@ const Shop = () => {
 
 
 
-  useEffect(() => {
-    const addedCart = checkDb();
-    const savedCart = [];
-    for (const id in addedCart) {
-      const addedItem = products.find((item) => item._id === id);
-      if (addedItem) {
-        const quantity = addedCart[id];
-        addedItem.quantity = quantity;
-        savedCart.push(addedItem);
-      }
-    }
-    setCartItems(savedCart);
-  }, [products]);
+  // useEffect(() => {
+  //   const addedCart = checkDb();
+  //   const savedCart = [];
+  //   for (const id in addedCart) {
+  //     const addedItem = products.find((item) => item._id === id);
+  //     if (addedItem) {
+  //       const quantity = addedCart[id];
+  //       addedItem.quantity = quantity;
+  //       savedCart.push(addedItem);
+  //     }
+  //   }
+  //   setCartItems(savedCart);
+  // }, [products]);
 
   return (
     <div className="shop-container container">
