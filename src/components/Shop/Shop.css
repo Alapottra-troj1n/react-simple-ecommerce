@@ -34,3 +34,22 @@
     background-color: #df5460;
 
 }
+
+.pagination-container button{
+    padding: 5px 10px;
+    margin: 0 5px;
+    margin-bottom:1rem;
+    background-color: white;
+    border: 2px solid #FFE0B3;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+.pagination-container button:hover{
+    color:white;
+    background-color: #df5460;
+
+}
+.pagination-container .selected{
+    background-color: #df5460;
+    color: white;
+}
