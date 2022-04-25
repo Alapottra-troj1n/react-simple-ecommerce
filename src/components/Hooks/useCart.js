@@ -12,7 +12,7 @@ const useCart = () => {
     const keys = Object.keys(storedItems);
     console.log(keys);
 
-    fetch(`http://localhost:5000/productsById`,{
+    fetch(`https://stormy-castle-29609.herokuapp.com/productsById`,{
       method: 'POST',
       headers:{
         'content-type': 'application/json'

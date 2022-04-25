@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
-import { addToDb, checkDb } from "../../fakedb";
-import useProducts from "../Hooks/useProducts";
+import { addToDb } from "../../fakedb";
 import { Link } from "react-router-dom";
 import useCart from "../Hooks/useCart";
 
@@ -15,7 +14,7 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() =>{
-      fetch(`http://localhost:5000/products?page=${page}&size=${productSize}`)
+      fetch(`https://stormy-castle-29609.herokuapp.com/products?page=${page}&size=${productSize}`)
       .then(res => res.json())
       .then(data=> setProducts(data));
   },[page, productSize])
@@ -45,7 +44,7 @@ const Shop = () => {
 
 
   useEffect(() =>{
-    fetch(`http://localhost:5000/productsCount`)
+    fetch(`https://stormy-castle-29609.herokuapp.com/productsCount`)
     .then(res => res.json())
     .then(data => {
       const count = data.count;

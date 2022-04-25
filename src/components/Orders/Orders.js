@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { SampleContext } from '../../App';
 import { removeFromDb } from '../../fakedb';
 import Cart from '../Cart/Cart';
 import useCart from '../Hooks/useCart';
